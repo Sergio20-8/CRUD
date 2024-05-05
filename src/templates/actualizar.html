@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Tarea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">  
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Sergio Hidalgo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Actualizar
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <main class="container p-4">
+        <h1 class="display-4 text-center title mt-4">Actualizar Tarea</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 my-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <form action="/actualizar-tarea/{{ tarea[0] }}" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="nuevo_contenido" id="nuevo_contenido" class="form-control" value="{{ tarea[1] }}" required>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary btn-block mt-2" style="width: 100%;">
+                                Guardar Cambios
+                            </button>
+                            <a href="{{ url_for('home') }}" class="btn btn-secondary btn-block mt-2" style="width: 100%;">Cancelar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
